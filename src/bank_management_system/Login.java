@@ -79,13 +79,14 @@ public class Login extends JFrame implements ActionListener {
     }
     
     public void actionPerformed(ActionEvent ae){
-        if(ae.getSource()==login){
-            
-        }else if(ae.getSource()==clear){
-           cardText.setText("");
+        if(ae.getSource()==clear){
+            cardText.setText("");
            pinText.setText("");
+        }else if(ae.getSource()==login){
+           
         }else if(ae.getSource()==signUp){
-            
+            setVisible(false);
+            new SignUpOne().setVisible(true);
         }
     }
     public static void main(String[] args) {
