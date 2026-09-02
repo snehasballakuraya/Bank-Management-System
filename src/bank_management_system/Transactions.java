@@ -7,7 +7,9 @@ import javax.swing.*;
 
 public class Transactions extends JFrame implements ActionListener{
    JButton deposit,withdraw,fastcash,mini,pinchange,balanceenquiry,exit;
-  Transactions() {
+   String pinnumber;
+  Transactions(String pinnumber) {
+      this.pinnumber=pinnumber;
     setLayout(null);
 
     ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/atmlogo1.jpeg"));
@@ -18,6 +20,7 @@ public class Transactions extends JFrame implements ActionListener{
     add(image);
             
     JLabel text= new JLabel("Please select your Transaction");
+    text.setFont(new Font("Raleway",Font.BOLD,16));
     text.setBounds(250, 110, 700, 35);
     text.setForeground(Color.BLACK);
     image.add(text);
@@ -67,12 +70,19 @@ public class Transactions extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent ae) {
        if(ae.getSource()==exit){
            System.exit(0);
+       }else if(ae.getSource()==deposit){
+           setVisible(false);
+           new Deposit(pinnumber).setVisible(true);
+       }
+       else if(ae.getSource()==withdraw){
+           setVisible(false);
+           new Withdrawal(pinnumber).setVisible(true);
        }
     }
   
   
     public static void main(String[] args) {
-        new Transactions();
+        new Transactions("");
     }
 
     
