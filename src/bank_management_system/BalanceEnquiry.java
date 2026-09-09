@@ -55,15 +55,7 @@ String pinnumber;
     public void actionPerformed(ActionEvent e) {
         
         setVisible(false);
-        new Transactions(pinnumber).setVisible(true);
-        
-//        try{
-//            
-//        }catch(Exception ae){
-//            System.out.println(e);
-//        }
-        
-        
+        new Transactions(pinnumber).setVisible(true); 
     }
         
     public static void main(String[] args) {
